@@ -12,7 +12,7 @@ class CourseView(viewsets.ModelViewSet):
     #courses/courseid/students
     @action(detail=True,methods=['get'])
     def students(self,request,pk=None):
-        print("ghjfsduyfdjkl7898980iuopjkhl",pk) 
+    
         course=Courses.objects.get(pk=pk)
         stu=Student.objects.filter(student_course=course)
         stu_serializer=StudentSerializer(stu,many=True,context={'request':request})
